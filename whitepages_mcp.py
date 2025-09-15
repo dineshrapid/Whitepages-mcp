@@ -1,11 +1,11 @@
 # whitepages_mcp.py
 import asyncio
 from playwright.async_api import async_playwright
-from fastmcp import FastMCP, tool
+from fastmcp import FastMCP
 
 app = FastMCP("whitepages-scraper")
 
-@app.tool()
+@app.tool
 async def check_whitepages(person_name: str, location: str = "New York, NY"):
     """Search Whitepages for a person and return possible addresses."""
     async with async_playwright() as p:
