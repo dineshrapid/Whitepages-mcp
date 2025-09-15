@@ -14,7 +14,7 @@ async def check_whitepages(person_name: str, location: str = "New York, NY"):
             "--disable-dev-shm-usage",
             "--disable-blink-features=AutomationControlled"
         ])
-        context = await browser.new_context(storage_state="/home/dineshkumar/auth.json")
+        context = await browser.new_context()
         page = await context.new_page()
 
         await page.goto("https://www.whitepages.com", wait_until="domcontentloaded", timeout=90000)
