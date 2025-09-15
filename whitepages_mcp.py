@@ -5,7 +5,7 @@ from fastmcp import FastMCP, tool
 
 app = FastMCP("whitepages-scraper")
 
-@tool()
+@app.tool()
 async def check_whitepages(person_name: str, location: str = "New York, NY"):
     """Search Whitepages for a person and return possible addresses."""
     async with async_playwright() as p:
